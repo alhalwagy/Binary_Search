@@ -1,0 +1,22 @@
+#include <iostream>
+using namespace std;
+int binarysearch(int arr[],int l,int h,int key){
+    while(l<=h){
+        int mid = (l+h) / 2;
+        if(arr[mid] == key){return mid;}
+        if(arr[mid]< key){l = mid + 1;}
+        else{h = mid - 1;}
+    }return -1;
+}
+int main(){
+    int arr [] ={1,10,15,90,22,40};
+    int n = sizeof(arr)/sizeof(arr[0]);
+    cout<< "please enter the key number"<<endl;
+    int num;
+    cin>>num;
+    int result = binarysearch(arr,0,n -1,num);
+    if(result == -1){
+        cout<< "The Number : ("<<num<<") was not found";
+    }else{		cout << "The Number : (" << arr[result] << ") Was Found At Index : (" << result << ")" << endl;
+}
+}
